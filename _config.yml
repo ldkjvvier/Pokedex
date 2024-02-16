@@ -1,6 +1,7 @@
 # Agrega esta línea al final del archivo para definir la política de seguridad de contenido (CSP) de tu sitio
-csp: "default-src 'none'; font-src 'self' https://fonts.googleapis.com; ..."
-# Reemplaza https://fonts.googleapis.com con la URL de la fuente que quieres usar
+csp: "default-src 'none'; font-src 'self' https://db.onlinewebfonts.com; ..."
+
+# Reemplaza https://db.onlinewebfonts.com con la URL de la fuente que quieres usar
 # Si quieres usar más de una fuente, puedes separarlas con espacios
 # Si no quieres usar ninguna fuente externa, puedes eliminar la URL y dejar solo 'self'
 # Si quieres permitir cualquier fuente, puedes usar el valor '*'
