@@ -16,7 +16,6 @@ export const PokemonProvider = ({
 
 	/* Obtener todos los Pokemones desde la API */
 	const getPokemons = async (limit = 12) => {
-		console.log('Obteniendo pokemons')
 		const { data } = await pokemonApi.get(
 			`pokemon?limit=${limit}&offset=${offset}`
 		)
