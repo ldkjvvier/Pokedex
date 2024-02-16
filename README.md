@@ -18,7 +18,7 @@ Pokédex es una aplicación web que te permite explorar y descubrir información
 
 ## Instalación
 
-1. Clona el repositorio: git clone https://github.com/tu_usuario/tu_proyecto.git
+1. Clona el repositorio: git clone https://github.com/ldkjvvier/Pokedex.git
 2. Instala las dependencias: npm install
 3. Inicia la aplicación: npm run dev
 

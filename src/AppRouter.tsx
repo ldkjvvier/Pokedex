@@ -5,9 +5,9 @@ import { PokemonPage } from './pages/PokemonPage'
 export const AppRouter = (): JSX.Element => {
 	return (
 		<Routes>
-			<Route path="/" element={<HomePage />} />
-			<Route path="/pokemon/:id" element={<PokemonPage />} />
-			<Route path="*" element={<h1>Not Found</h1>} />
+			<Route path="/pokedex" element={<HomePage />} />
+			<Route path="pokedex/:id" element={<PokemonPage />} />
+			<Route path="*" element={<HomePage />} />
 		</Routes>
 	)
 }

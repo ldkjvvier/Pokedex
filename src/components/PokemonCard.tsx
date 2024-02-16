@@ -10,7 +10,7 @@ export const PokemonCard = ({
 	return (
 		<div className="animation gap-3 bg-white flex flex-wrap flex-col max-w-56">
 			<div className="bg-gray-200 rounded flex">
-				<a href={`/pokemon/${pokemon.id}`}>
+				<a href={`${pokemon.id}`}>
 					<picture>
 						<img
 							src={
