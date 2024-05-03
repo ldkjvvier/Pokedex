@@ -1,7 +1,7 @@
 import { AllPokemons } from '../interfaces/AllPokemons'
 import { Color } from '../interfaces/Color'
 import { capitalizeFirstLetter } from '../utils/helpers'
-
+import { Link } from 'react-router-dom'
 export const PokemonCard = ({
 	pokemon,
 }: {
@@ -10,7 +10,7 @@ export const PokemonCard = ({
 	return (
 		<div className="animation gap-3 bg-white flex flex-wrap flex-col max-w-56">
 			<div className="bg-gray-200 rounded flex">
-				<a href={`${pokemon.id}`}>
+				<Link to={`/pokemon/${pokemon.id}`}>
 					<picture>
 						<img
 							src={
@@ -21,7 +21,7 @@ export const PokemonCard = ({
 							className="w-48 h-48"
 						/>
 					</picture>
-				</a>
+				</Link>
 			</div>
 			<section className="p-3 text-start">
 				<p className="flexoBold text-gray-500 text-xs font-bold">

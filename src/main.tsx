@@ -9,7 +9,7 @@ const root = ReactDOM.createRoot(document.getElementById('root')!)
 root.render(
 	<React.StrictMode>
 		<PokemonProvider>
-			<RouterProvider router={router} />
+			<RouterProvider router={router}/>
 		</PokemonProvider>
 	</React.StrictMode>
 )
