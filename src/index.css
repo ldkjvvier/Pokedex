@@ -63,7 +63,8 @@
 :root {
   line-height: 1.5;
   font-weight: 400;
-  font-family: arial, sans-serif;
+  font-family: 'FlexoDemi', sans-serif;
+
   color: rgba(255, 255, 255, 0.87);
 
   font-synthesis: none;
@@ -82,8 +83,6 @@ body {
   margin: 0;
   min-width: 100%;
   min-height: 100vh;
-  font-family: 'FlexoDemi', sans-serif;
-
 }
 
 h1 {
