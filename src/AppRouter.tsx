@@ -6,8 +6,8 @@ export const AppRouter = (): JSX.Element => {
 	return (
 		<Routes>
 			<Route path="/Pokedex" element={<HomePage />} />
-			<Route path="Pokedex/:id" element={<PokemonPage />} />
-			<Route path="*" element={<HomePage />} />
+			<Route path="/Pokedex/:id" element={<PokemonPage />} />
+			<Route path="/*" element={<HomePage />} />
 		</Routes>
 	)
 }
