@@ -1,4 +1,4 @@
-import './index.css'
+/* import './index.css'
 import { AppRouter } from './routes'
 import { PokemonProvider } from './context/PokemonProvider'
 
@@ -11,3 +11,4 @@ function App(): JSX.Element{
 }
 
 export default App
+ */
