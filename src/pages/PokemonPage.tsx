@@ -77,7 +77,7 @@ export const PokemonPage = (): JSX.Element => {
 
 	return (
 		<main>
-			<div className=" px-3 w-full text-black flex flex-col items-center align-middle float-end">
+			<div className="flexoMedium font-bold px-3 w-full text-black flex flex-col items-center align-middle float-end">
 				<div className="flex flex-col xl:3/4 2xl:w-3/5 w-4/5  bg-white">
 					<section className="flex justify-center text-xl gap-12 pb-6 font-4xl pt-12 ">
 						<h4 className="text-3xl">

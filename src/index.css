@@ -40,30 +40,30 @@
 
 
 .roboto {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', arial, sans-serif;
 }
 
 .flexo {
-  font-family: 'Flexo', sans-serif;
+  font-family: 'Flexo', arial, sans-serif;
 }
 
 .flexoDemi {
-  font-family: 'FlexoDemi', sans-serif;
+  font-family: 'FlexoDemi', arial, sans-serif;
 }
 
 .flexoMedium {
-  font-family: 'FlexoMedium', sans-serif;
+  font-family: 'FlexoMedium', arial, sans-serif;
 }
 
 .flexoBold {
-  font-family: 'FlexoBold', sans-serif;
+  font-family: 'FlexoBold', arial, sans-serif;
 }
 
 
 :root {
   line-height: 1.5;
   font-weight: 400;
-  font-family: 'FlexoDemi', sans-serif;
+  font-family: 'FlexoDemi', arial, sans-serif;
 
   color: rgba(255, 255, 255, 0.87);
 

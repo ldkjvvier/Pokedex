@@ -34,7 +34,7 @@ export const PokemonCard = ({
 					{pokemon.types.map(
 						(type: { type: { name: string } }, index) => (
 							<span
-								className={`text-gray-500 rounded px-6 py-1 text-[11px] mr-2 mt-2`}
+								className={`flexoMedium text-gray-500 rounded px-6 py-1 text-[11px] mr-2 mt-2`}
 								key={type.type.name + index}
 								style={{
 									background:
