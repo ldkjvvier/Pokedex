@@ -24,7 +24,7 @@ export const PokemonCard = ({
 				</a>
 			</div>
 			<section className="p-3 text-start">
-				<p className="text-gray-500 text-xs font-bold">
+				<p className="flexoBold text-gray-500 text-xs font-bold">
 					N.° {pokemon.id}
 				</p>
 				<h5 className="text-black text-lg pt-1.5 font-bold">

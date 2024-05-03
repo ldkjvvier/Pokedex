@@ -1,10 +1,68 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Custom Fonts */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/assets/fonts/RobotoRegular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Flexo';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/assets/fonts/FlexoRegular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'FlexoDemi';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/assets/fonts/Flexo-Demi.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'FlexoMedium';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/assets/fonts/FlexoMedium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'FlexoBold';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/assets/fonts/FlexoBold.ttf') format('truetype');
+}
+
+
+.roboto {
+  font-family: 'Roboto', sans-serif;
+}
+
+.flexo {
+  font-family: 'Flexo', sans-serif;
+}
+
+.flexoDemi {
+  font-family: 'FlexoDemi', sans-serif;
+}
+
+.flexoMedium {
+  font-family: 'FlexoMedium', sans-serif;
+}
+
+.flexoBold {
+  font-family: 'FlexoBold', sans-serif;
+}
+
+
 :root {
   line-height: 1.5;
   font-weight: 400;
-  font-family: arial, sans-serif;
   color: rgba(255, 255, 255, 0.87);
 
   font-synthesis: none;
@@ -23,6 +81,8 @@ body {
   margin: 0;
   min-width: 100%;
   min-height: 100vh;
+  font-family: 'FlexoDemi', sans-serif;
+
 }
 
 h1 {

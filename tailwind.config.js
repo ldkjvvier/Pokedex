@@ -5,7 +5,7 @@ export default {
 		extend: {
 			/* image background */
 			backgroundImage: {
-				'background-image': "url('/container_bg.png')",
+				'background-image': "url('assets/images/container_bg.png')",
 			},
 		},
 	},

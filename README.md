@@ -12,9 +12,9 @@ Pokédex es una aplicación web que te permite explorar y descubrir información
 
 ## Capturas de Pantalla
 
-![Pagina Inicial](image.png)
+![Pagina Inicial](assets/images/image.png)
 
-![Pagina de Pokémon](image-1.png)
+![Pagina de Pokémon](assets/images/image-1.png)
 
 ## Instalación
 
