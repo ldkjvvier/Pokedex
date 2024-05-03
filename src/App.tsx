@@ -1,5 +1,5 @@
 import './index.css'
-import { AppRouter } from './AppRouter'
+import { AppRouter } from './routes'
 import { PokemonProvider } from './context/PokemonProvider'
 
 function App(): JSX.Element{
