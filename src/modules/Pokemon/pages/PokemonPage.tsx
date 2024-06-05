@@ -7,7 +7,7 @@ import { PokeBallIcon } from '../../../components/icons'
 import { usePokemon } from '../hooks/usePokemon'
 import { NotFound } from '../../../components/NotFound'
 import { capitalizeFirstLetter } from '@/utils/capitalizeFirstLetter'
-
+import { Weakness } from '../components/weakness/weakness'
 
 export const PokemonPage = (): JSX.Element => {
 	const { id } = useParams()
@@ -153,34 +153,7 @@ export const PokemonPage = (): JSX.Element => {
 								</ul>
 							</div>
 
-							<div className="text-lg pb-6">
-								<span className="font-medium">Debilidad</span>
-
-								<ul className="flex flex-wrap">
-									{/* 										{PokemonWeakness.damage_relations?.double_damage_from.map(
-											(weakness, index) => (
-												<li
-													className={`text-gray-500 rounded px-12 py-0 text-[16px] mr-2 mt-2`}
-													style={{
-														background:
-															Color[
-																weakness.name as keyof typeof Color
-															].background,
-														color:
-															Color[
-																weakness.name as keyof typeof Color
-															].text,
-													}}
-													key={index}
-												>
-													<span>
-														{capitalizeFirstLetter(weakness.name)}
-													</span>
-												</li>
-											)
-										) ?? <span>Error al cargar debilidades</span>} */}
-								</ul>
-							</div>
+							<Weakness id={Number(id)}/>
 						</div>
 					</section>
 					<PokemonEvolutions />

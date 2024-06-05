@@ -1,4 +1,4 @@
-import { getPokemon } from "../services/getPokemon";
+import { getPokemon } from "../services/pokemonService";
 import { useEffect, useState } from "react";
 import { Pokemon } from "pokeapi-js-wrapper";
 export const usePokemon = (id: number) => {
