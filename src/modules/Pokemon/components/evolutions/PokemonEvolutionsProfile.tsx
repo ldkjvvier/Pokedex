@@ -1,5 +1,5 @@
-import { Color } from '../interfaces/Color'
-import { capitalizeFirstLetter } from '../utils/helpers'
+import { Color } from '../../../Home/interfaces/Color'
+import { capitalizeFirstLetter } from '@/utils/capitalizeFirstLetter'
 export const PokemonEvolutionProfile = (): JSX.Element => {
 	return (
 		<>

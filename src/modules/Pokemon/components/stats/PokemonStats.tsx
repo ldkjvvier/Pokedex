@@ -1,5 +1,4 @@
-import { PokemonStatBar } from './PokemonStatsBar'
-
+import { PokemonStatBar } from "./PokemonStatsBar"
 export const PokemonStats = (): JSX.Element => {
 	return (
 		<div

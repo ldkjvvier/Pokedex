@@ -1,18 +1,21 @@
 import { PokemonCard } from '../components/PokemonCard'
-import { PokemonContext } from '../context/PokemonContext'
-import React, { useContext } from 'react'
-import { AllPokemons } from '../interfaces/AllPokemons'
-import { Loader } from '../components/Loader'
-
+import React from 'react'
+import { usePokemons } from '../hooks/usePokemons'
+import { Loader } from '../../../components/Loader'
+import { Pokemon } from 'pokeapi-js-wrapper'
 export const HomePage = (): JSX.Element => {
-	const { Pokemons, onclickLoadMorePokemons } = useContext(PokemonContext) as { Pokemons: AllPokemons[], onclickLoadMorePokemons: () => void }
 
+	const { loading, pokemons, error, loadMorePokemons } = usePokemons()
+
+	if (error) return <p>Error: {error}</p>
+	if (loading) return <Loader />
 	return (
-		<main>
-			{(Pokemons && (
+		<>
+			{loading && <Loader />}
+			<main>
 				<div className="bg-white px-16 py-16 max-w-3/4">
 					<div className="grid sm:grid-cols-4 gap-3">
-						{Pokemons.map((pokemon: AllPokemons) => (
+						{pokemons?.map((pokemon: Pokemon) => (
 							<React.Fragment key={`${pokemon.name}-${pokemon.id}`}>
 								<PokemonCard pokemon={pokemon} />
 							</React.Fragment>
@@ -21,12 +24,12 @@ export const HomePage = (): JSX.Element => {
 
 					<button
 						className="bg-cyan-500 hover:bg-cyan-600 p-3 rounded mt-10"
-						onClick={() => onclickLoadMorePokemons()}
+						onClick={() => loadMorePokemons()}
 					>
 						Load More Pokemons
 					</button>
 				</div>
-			)) || <Loader />}
-		</main>
+			</main>
+		</>
 	)
 }
