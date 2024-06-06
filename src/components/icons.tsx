@@ -1,8 +1,8 @@
 export const FemaleIcon = (): JSX.Element => {
 	return (
 		<svg
-			width="16px"
-			height="16px"
+			width="24px"
+			height="24px"
 			viewBox="0 0 24 24"
 			fill="none"
 			xmlns="http://www.w3.org/2000/svg"
@@ -20,8 +20,8 @@ export const FemaleIcon = (): JSX.Element => {
 export const MaleIcon = (): JSX.Element => {
 	return (
 		<svg
-			width="16px"
-			height="16px"
+			width="24px"
+			height="24px"
 			viewBox="0 0 24 24"
 			fill="none"
 			xmlns="http://www.w3.org/2000/svg"
