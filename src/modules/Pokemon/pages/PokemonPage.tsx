@@ -16,6 +16,7 @@ export const PokemonPage = (): JSX.Element => {
 	if (loading) return <p>Cargando...</p>
 	if (error) return <p>Error: {error}</p>
 	if (!pokemon) return <NotFound />
+	
 	return (
 		<main>
 			<div className="flexoMedium font-bold md:px-3 w-full text-black flex flex-col items-center align-middle float-end">
@@ -25,13 +26,12 @@ export const PokemonPage = (): JSX.Element => {
 							{capitalizeFirstLetter(pokemon.name)}
 						</h4>
 						<span className="text-3xl text-gray-600">
-							N.° {
-								pokemon.id.toString().length === 1
-									? '00' + pokemon.id
-									: pokemon.id.toString().length === 2
-									? '0' + pokemon.id
-									: pokemon.id
-							}
+							N.°{' '}
+							{pokemon.id.toString().length === 1
+								? '00' + pokemon.id
+								: pokemon.id.toString().length === 2
+								? '0' + pokemon.id
+								: pokemon.id}
 						</span>
 					</section>
 
@@ -62,25 +62,18 @@ export const PokemonPage = (): JSX.Element => {
 						<div className="text-start">
 							<div>
 								<p className="text-lg pb-3">
-									{capitalizeFirstLetter(pokemon.name)} es un
-									Pokémon de tipo{' '}
+									{capitalizeFirstLetter(pokemon.name)} es un Pokémon
+									de tipo{' '}
 									{pokemon.types.map(
-										(
-											type: { type: { name: string } },
-											index
-										) => (
+										(type: { type: { name: string } }, index) => (
 											<span key={index}>
-												{capitalizeFirstLetter(
-													type.type.name
-												)}
+												{capitalizeFirstLetter(type.type.name)}
 											</span>
 										)
 									)}
 									. {pokemon.species.name} es un Pokémon de la
-									generación{' '}
-									{pokemon.species.name} y su
-									número de Pokédex es{' '}
-									{pokemon.species.url}.
+									generación {pokemon.species.name} y su número de
+									Pokédex es {pokemon.species.url}.
 								</p>
 							</div>
 							<div className="pb-6 flex gap-3">
@@ -95,25 +88,22 @@ export const PokemonPage = (): JSX.Element => {
 								</span>
 							</div>
 
-							<div
-								className="bg-cyan-600/70 rounded p-3 flex mb-6 text-lg"
-								style={{
-									background: '#30A7D7',
-								}}
-							>
-								<div className="w-2/4">
+							<div className="bg-[#30A7D7] text-center grid grid-cols-1 md:grid-cols-2 rounded p-3 mb-6 text-lg">
+								<div className="w-full md:w-2/4">
 									<ul className="">
-										<li className="flex flex-col">
+										<li>
 											<span className="text-white ">Altura</span>
+											<br />
 											<span className="">{pokemon.height}</span>
 										</li>
-										<li className="flex flex-col">
+										<li>
 											<span className="text-white">Peso</span>
+											<br />
 											<span>{pokemon.weight}</span>
 										</li>
-										<li className="flex flex-col">
+										<li>
 											<span className="text-white">Sexo</span>
-											<div className="flex gap-2">
+											<div className="flex gap-2 justify-center">
 												<span>
 													<MaleIcon />
 												</span>
@@ -124,26 +114,31 @@ export const PokemonPage = (): JSX.Element => {
 										</li>
 									</ul>
 								</div>
-								<div className="w-2/4">
+								<div className="w-full md:w-2/4">
 									<ul>
-										<li className="flex flex-col">
+										<li>
 											<span className="text-white">Categoría</span>
+											<br />
 											<span>
 												{capitalizeFirstLetter(pokemon.species.name)}
 											</span>
 										</li>
-										<li className="flex flex-col">
+										<li>
 											<span className="text-white">Habilidad</span>
+											<br />
 											{pokemon.abilities.map(
 												(
 													ability: { ability: { name: string } },
 													index
 												) => (
-													<span key={index}>
-														{capitalizeFirstLetter(
-															ability.ability.name
-														)}
-													</span>
+													<>
+														<span key={index}>
+															{capitalizeFirstLetter(
+																ability.ability.name
+															)}
+														</span>
+														<br />
+													</>
 												)
 											)}
 										</li>
@@ -179,7 +174,7 @@ export const PokemonPage = (): JSX.Element => {
 								</ul>
 							</div>
 
-							<Weakness id={Number(id)}/>
+							<Weakness id={Number(id)} />
 						</div>
 					</section>
 					<PokemonEvolutions />
