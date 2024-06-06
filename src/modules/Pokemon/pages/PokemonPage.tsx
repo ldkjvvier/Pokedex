@@ -16,11 +16,11 @@ export const PokemonPage = (): JSX.Element => {
 	if (loading) return <p>Cargando...</p>
 	if (error) return <p>Error: {error}</p>
 	if (!pokemon) return <NotFound />
-	
+
 	return (
 		<main>
 			<div className="flexoMedium font-bold md:px-3 w-full text-black flex flex-col items-center align-middle float-end">
-				<div className="flex flex-col md:w-4/5  bg-white">
+				<div className="flex flex-col md:w-4/5 px-5  bg-white">
 					<section className="flex justify-center text-xl gap-12 pb-6 font-4xl pt-12 ">
 						<h4 className="text-3xl">
 							{capitalizeFirstLetter(pokemon.name)}
