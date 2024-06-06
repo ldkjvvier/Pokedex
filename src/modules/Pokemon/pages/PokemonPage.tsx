@@ -18,18 +18,24 @@ export const PokemonPage = (): JSX.Element => {
 	if (!pokemon) return <NotFound />
 	return (
 		<main>
-			<div className="flexoMedium font-bold px-3 w-full text-black flex flex-col items-center align-middle float-end">
-				<div className="flex flex-col xl:3/4 2xl:w-3/5 w-4/5  bg-white">
+			<div className="flexoMedium font-bold md:px-3 w-full text-black flex flex-col items-center align-middle float-end">
+				<div className="flex flex-col md:w-4/5  bg-white">
 					<section className="flex justify-center text-xl gap-12 pb-6 font-4xl pt-12 ">
 						<h4 className="text-3xl">
 							{capitalizeFirstLetter(pokemon.name)}
 						</h4>
 						<span className="text-3xl text-gray-600">
-							N.° {pokemon.id}
+							N.° {
+								pokemon.id.toString().length === 1
+									? '00' + pokemon.id
+									: pokemon.id.toString().length === 2
+									? '0' + pokemon.id
+									: pokemon.id
+							}
 						</span>
 					</section>
 
-					<section className="lg:grid grid-cols-2 p-3 mb-16 flex-wrap gap-3">
+					<section className="grid grid-cols-1 lg:grid-cols-2 p-3 mb-16 flex-wrap gap-3">
 						<div className="rounded">
 							<div
 								className="rounded"
@@ -56,7 +62,25 @@ export const PokemonPage = (): JSX.Element => {
 						<div className="text-start">
 							<div>
 								<p className="text-lg pb-3">
-									{/* {getFlavorTextSpanish()} */}
+									{capitalizeFirstLetter(pokemon.name)} es un
+									Pokémon de tipo{' '}
+									{pokemon.types.map(
+										(
+											type: { type: { name: string } },
+											index
+										) => (
+											<span key={index}>
+												{capitalizeFirstLetter(
+													type.type.name
+												)}
+											</span>
+										)
+									)}
+									. {pokemon.species.name} es un Pokémon de la
+									generación{' '}
+									{pokemon.species.name} y su
+									número de Pokédex es{' '}
+									{pokemon.species.url}.
 								</p>
 							</div>
 							<div className="pb-6 flex gap-3">
@@ -104,7 +128,9 @@ export const PokemonPage = (): JSX.Element => {
 									<ul>
 										<li className="flex flex-col">
 											<span className="text-white">Categoría</span>
-											<span>{/* {getCategorySpanish()} */}</span>
+											<span>
+												{capitalizeFirstLetter(pokemon.species.name)}
+											</span>
 										</li>
 										<li className="flex flex-col">
 											<span className="text-white">Habilidad</span>
