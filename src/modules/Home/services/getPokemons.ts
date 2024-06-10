@@ -1,6 +1,6 @@
 import { Pokedex } from 'pokeapi-js-wrapper'
 const P = new Pokedex()
-export const getPokemons = async ({ limit = 20, offset = 0 }) => {
+export const getPokemons = async (limit = 20, offset = 0) => {
 	try {
 		const pokemons = await P.getPokemonsList({ limit, offset })
 

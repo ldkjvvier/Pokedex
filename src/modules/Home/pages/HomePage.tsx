@@ -5,13 +5,14 @@ import { Loader } from '../../../components/Loader'
 import { Pokemon } from 'pokeapi-js-wrapper'
 export const HomePage = (): JSX.Element => {
 
-	const { loading, pokemons, error, loadMorePokemons } = usePokemons()
+	const { isLoading, pokemons, error } = usePokemons()
+	if (error) return <p>Error: {error.message}</p>
+	if (isLoading ) return <Loader />
+	if (!pokemons) return <p>No Pokemons</p>
 
-	if (error) return <p>Error: {error}</p>
-	if (loading) return <Loader />
 	return (
 		<>
-			{loading && <Loader />}
+			{isLoading && <Loader />}
 			<main>
 				<div className="bg-white px-16 py-16 max-w-3/4">
 					<div className="grid sm:grid-cols-4 gap-3">
@@ -24,7 +25,7 @@ export const HomePage = (): JSX.Element => {
 
 					<button
 						className="bg-cyan-500 hover:bg-cyan-600 p-3 rounded mt-10"
-						onClick={() => loadMorePokemons()}
+						onClick={() => {}}
 					>
 						Load More Pokemons
 					</button>
