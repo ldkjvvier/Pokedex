@@ -12,6 +12,7 @@ export const usePokemons = () => {
 			console.log(pokemons);
 			return { pokemons };
 		},
+		refetchOnWindowFocus: false,
 	})
 
 
