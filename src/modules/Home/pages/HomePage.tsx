@@ -5,7 +5,7 @@ import { Loader } from '../../../components/Loader'
 import { Pokemon } from 'pokeapi-js-wrapper'
 export const HomePage = (): JSX.Element => {
 
-	const { isLoading, pokemons, error } = usePokemons()
+	const { isLoading, pokemons, error, fetchMorePokemons } = usePokemons()
 	if (error) return <p>Error: {error.message}</p>
 	if (isLoading ) return <Loader />
 	if (!pokemons) return <p>No Pokemons</p>
@@ -25,7 +25,7 @@ export const HomePage = (): JSX.Element => {
 
 					<button
 						className="bg-cyan-500 hover:bg-cyan-600 p-3 rounded mt-10"
-						onClick={() => {}}
+						onClick={() => fetchMorePokemons()}
 					>
 						Load More Pokemons
 					</button>

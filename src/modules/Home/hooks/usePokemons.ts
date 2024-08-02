@@ -15,6 +15,9 @@ export const usePokemons = () => {
 		refetchOnWindowFocus: false,
 	})
 
+	const fetchMorePokemons = async () => {
+		console.log("CARGANDO MAS");
+	}
 
 	return {
 		pokemons: data?.pokemons,
@@ -22,5 +25,6 @@ export const usePokemons = () => {
 		isLoading,
 
 		isPreviousData: isLoading,
+		fetchMorePokemons,
 	}
 }
