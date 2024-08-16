@@ -4,10 +4,10 @@ import { usePokemons } from '../hooks/usePokemons'
 import { Loader } from '../../../components/Loader'
 import { Pokemon } from 'pokeapi-js-wrapper'
 export const HomePage = (): JSX.Element => {
-
-	const { isLoading, pokemons, error, fetchMorePokemons } = usePokemons()
+	const { isLoading, pokemons, error, fetchMorePokemons } =
+		usePokemons()
 	if (error) return <p>Error: {error.message}</p>
-	if (isLoading ) return <Loader />
+	if (isLoading) return <Loader />
 	if (!pokemons) return <p>No Pokemons</p>
 
 	return (

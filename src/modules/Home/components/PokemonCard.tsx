@@ -13,6 +13,7 @@ export const PokemonCard = ({
 			<div className="bg-gray-200 rounded flex">
 				<Link to={`/pokemon/${pokemon.id}`}>
 					<img
+						loading="lazy"
 						src={
 							pokemon.sprites.other['official-artwork']
 								.front_default ?? ''
