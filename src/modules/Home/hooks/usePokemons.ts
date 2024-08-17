@@ -39,7 +39,7 @@ export const usePokemons = () => {
   };
 
   return {
-    pokemons: pokemonList,
+    pokemons: pokemonList || [],
     error,
     isLoading: page === 0 && isLoading,
     fetchMorePokemons,
