@@ -1,8 +1,5 @@
-import { PokemonCard } from '../components/PokemonCard';
-import React from 'react';
 import { usePokemons } from '../hooks/usePokemons';
 import { Loader } from '../../../components/Loader';
-import { Pokemon } from 'pokeapi-js-wrapper';
 export const HomePage = (): JSX.Element => {
   const { isLoading, pokemons, error, fetchMorePokemons } = usePokemons();
   if (error) return <p>Error: {error.message}</p>;
