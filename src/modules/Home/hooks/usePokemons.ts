@@ -29,7 +29,7 @@ export const usePokemons = () => {
     setIsFetchingMore(true);
     const nextPage = page + 1;
     const newPokemons = await fetchPokemons(nextPage);
-
+    console.log(newPokemons);
     // Usamos un Set para evitar duplicados
     const uniquePokemons = Array.from(new Set([...pokemonList, ...newPokemons]));
 
