@@ -6,12 +6,10 @@
   "module": "commonjs",
   "scripts": {
     "dev": "vite",
-    "start": "npm run build && vite preview",
-    "build": "tsc && vite build",
+    "build": "npm run lint && tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "preview": "npm run build && vite preview"
+
   },
   "dependencies": {
     "@tanstack/react-query": "^5.40.1",

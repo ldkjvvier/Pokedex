@@ -1,11 +1,10 @@
-import { getPokemon } from "../services/pokemonService";
-import { useEffect, useState } from "react";
-import { Pokemon } from "pokeapi-js-wrapper";
+import { getPokemon } from '../services/pokemonService';
+import { useEffect, useState } from 'react';
+import { Pokemon } from 'pokeapi-js-wrapper';
 export const usePokemon = (id: number) => {
   const [pokemon, setPokemon] = useState<Pokemon>();
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState("");
-
+  const [error, setError] = useState('');
 
   useEffect(() => {
     const fetchPokemon = async () => {
@@ -14,14 +13,13 @@ export const usePokemon = (id: number) => {
         if (data) setPokemon(data);
         setLoading(false);
       } catch (error) {
-        setError("Error fetching pokemon");
+        setError('Error fetching pokemon');
         setLoading(false);
       }
     };
 
-    fetchPokemon();
-  },[id])
-
+    void fetchPokemon();
+  }, [id]);
 
   return { pokemon, error, loading };
-}
+};

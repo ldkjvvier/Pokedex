@@ -21,7 +21,7 @@ export const HomePage = (): JSX.Element => {
             ))}
           </div>
 
-          <button className="bg-cyan-500 hover:bg-cyan-600 p-3 rounded mt-10" onClick={() => fetchMorePokemons()}>
+          <button className="bg-cyan-500 hover:bg-cyan-600 p-3 rounded mt-10" onClick={() => void fetchMorePokemons()}>
             Load More Pokemons
           </button>
         </div>
