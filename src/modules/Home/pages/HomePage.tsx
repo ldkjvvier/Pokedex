@@ -8,7 +8,7 @@ export const HomePage = (): JSX.Element => {
 		usePokemons()
 	if (error) return <p>Error: {error.message}</p>
 	if (isLoading) return <Loader />
-	if (!pokemons) return <p>No Pokemons</p>
+	if (!pokemons || pokemons.length < 1) return <p>No Pokemons</p>
 
 	return (
 		<>
