@@ -1,3 +1,4 @@
+import { Color } from '../interfaces/Color';
 import { Link } from 'react-router-dom';
 import { Pokemon } from 'pokeapi-js-wrapper';
 import { capitalizeFirstLetter } from '@/utils/capitalizeFirstLetter';
@@ -12,7 +13,7 @@ export const PokemonCard = ({ pokemon }: { pokemon: Pokemon }): JSX.Element => {
           <img
             loading="lazy"
             src={officialArtworkUrl}
-            alt={pokemon.name + ' avatar image'}
+            alt={`${pokemon.name} avatar image`}
             className="bg-cover pointer-events-none"
           />
         </Link>
@@ -20,7 +21,29 @@ export const PokemonCard = ({ pokemon }: { pokemon: Pokemon }): JSX.Element => {
       <section className="p-3 text-start">
         <p className="flexoBold text-gray-500 text-xs font-bold">N.° {pokemon.id}</p>
         <h5 className="text-black text-lg pt-1.5 font-bold">{capitalizeFirstLetter(pokemon.name)}</h5>
-        <div></div>
+        <div>
+          {Array.isArray(pokemon.types) &&
+            pokemon.types.map((type: { type: { name: string } }) => {
+              const typeName = type.type.name as keyof typeof Color;
+              const typeColor = Color[typeName] || {
+                background: 'default-background-color',
+                text: 'default-text-color'
+              };
+
+              return (
+                <span
+                  className={`flexoMedium text-gray-500 rounded px-6 py-1 text-[11px] mr-2 mt-2`}
+                  key={typeName}
+                  style={{
+                    background: typeColor.background,
+                    color: typeColor.text
+                  }}
+                >
+                  {capitalizeFirstLetter(type.type.name)}
+                </span>
+              );
+            })}
+        </div>
       </section>
     </div>
   );
