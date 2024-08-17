@@ -18,7 +18,7 @@ export const HomePage = (): JSX.Element => {
               <React.Fragment key={`${pokemon.name}-${pokemon.id}`}>
                 <PokemonCard pokemon={pokemon} />
               </React.Fragment>
-            ))}
+            )) || <p>No Pokemons</p>}
           </div>
 
           <button className="bg-cyan-500 hover:bg-cyan-600 p-3 rounded mt-10" onClick={() => void fetchMorePokemons()}>
