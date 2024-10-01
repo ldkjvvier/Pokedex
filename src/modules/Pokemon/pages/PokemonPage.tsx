@@ -1,19 +1,14 @@
 import { Color } from '../../Home/interfaces/Color';
 import { useParams } from 'react-router-dom';
-import { FemaleIcon, MaleIcon } from '../../../components/icons';
-import { PokemonStats } from '../components/stats/PokemonStats';
-import { PokemonEvolutions } from '../components/evolutions/PokemonEvolutions';
-import { PokeBallIcon } from '../../../components/icons';
 import { usePokemon } from '../hooks/usePokemon';
-import { NotFound } from '../../../components/NotFound';
 import { capitalizeFirstLetter } from '@/utils/capitalizeFirstLetter';
-import { Weakness } from '../components/weakness/weakness';
-
+import { Weakness, PokemonStats, PokemonEvolutions } from '../components';
+import { Loader, FemaleIcon, MaleIcon, PokeBallIcon, NotFound } from '@/components';
 export const PokemonPage = (): JSX.Element => {
   const { id } = useParams();
   const { pokemon, error, loading } = usePokemon(Number(id));
 
-  if (loading) return <p>Cargando...</p>;
+  if (loading) return <Loader />;
   if (error) return <p>Error: {error}</p>;
   if (!pokemon) return <NotFound />;
 
