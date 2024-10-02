@@ -6,8 +6,7 @@ import { Pokemon } from 'pokeapi-js-wrapper';
 export const HomePage = (): JSX.Element => {
   const { isLoading, pokemons, error, fetchMorePokemons } = usePokemons();
   if (error) return <p>Error: {error.message}</p>;
-  if (isLoading) return <Loader />;
-  if (!pokemons || pokemons.length < 1) return <p>No Pokemons</p>;
+  if (isLoading || pokemons.length < 1) return <Loader />;
 
   return (
     <>
