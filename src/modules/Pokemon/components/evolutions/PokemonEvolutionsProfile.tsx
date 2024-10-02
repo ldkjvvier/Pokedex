@@ -11,7 +11,7 @@ export const PokemonEvolutionProfile = ({ pokemon }: PokemonEvolutionProfileProp
     <>
       <div className="text-white flex flex-col items-center">
         <div
-          className="p-6 rounded-full border-white border-4 h-36 w-36 bg-opacity-10 mb-3"
+          className="p-3 rounded-full border-white border-4 h-40 w-40 bg-opacity-10 mb-3 overflow-visible"
           style={{
             backgroundColor: '#616161',
             boxShadow: '0px 2px 8px 0px #000000'
@@ -20,20 +20,23 @@ export const PokemonEvolutionProfile = ({ pokemon }: PokemonEvolutionProfileProp
           <img
             src={pokemon.sprites.other['official-artwork'].front_default ?? ''}
             alt={pokemon.name + ' avatar image'}
-            className="bg-transparent object-cover"
+            className="bg-transparent object-cover z-0 overflow-hidden"
           />
         </div>
-        <div className="flex flex-col">
-          <p>
-            <span className="font-bold">{pokemon.name}</span> N.°{' '}
-            {pokemon.id.toString().length === 1
-              ? '00' + pokemon.id
-              : pokemon.id.toString().length === 2
-              ? '0' + pokemon.id
-              : pokemon.id}
-          </p>
-          <ul className="flex flex-wrap justify-center">
-            {pokemon.types.map((type: { type: { name: string } }, index) => (
+        <div>
+          <div className="inline-flex gap-2">
+            <h3 className="font-bold text-[1.1rem]">{capitalizeFirstLetter(pokemon.name)}</h3>
+            <span className="flexo text-[#a4acaf]">
+              N.º{' '}
+              {pokemon.id.toString().length === 1
+                ? '00' + pokemon.id
+                : pokemon.id.toString().length === 2
+                ? '0' + pokemon.id
+                : pokemon.id}
+            </span>
+          </div>
+          <ul className="flex flex-wrap">
+            {pokemon.types.map((type, index) => (
               <li
                 className={`text-gray-500 rounded px-5 py-0 text-[12px] mr-2 mt-2`}
                 key={index}
