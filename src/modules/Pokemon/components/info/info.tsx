@@ -14,6 +14,17 @@ export const PokemonInfo = ({ pokemon, specie }: PokemonInfoProps) => {
       ?.genus.split('Pokémon')[0]
       .trim() ?? 'Unknown';
 
+  const genderRate = specie.gender_rate;
+  let malePercentage = 0;
+  let femalePercentage = 0;
+
+  if (genderRate === -1) {
+    malePercentage = femalePercentage = 0; // Pokémon sin género
+  } else {
+    femalePercentage = (genderRate / 8) * 100;
+    malePercentage = 100 - femalePercentage;
+  }
+
   return (
     <div className="bg-[#30A7D7] text-start grid grid-cols-1 md:grid-cols-2 rounded p-3 mb-6 text-lg">
       <div className="w-full md:w-2/4">
@@ -31,12 +42,24 @@ export const PokemonInfo = ({ pokemon, specie }: PokemonInfoProps) => {
           <li>
             <span className="text-white">Sexo</span>
             <div className="flex gap-2">
-              <span>
-                <MaleIcon />
-              </span>
-              <span>
-                <FemaleIcon />
-              </span>
+              {genderRate === -1 ? (
+                <span>DESCONOCIDO</span>
+              ) : (
+                <>
+                  {/* Mostrar icono de macho solo si existe porcentaje de machos */}
+                  {malePercentage > 0 && (
+                    <span>
+                      <MaleIcon />
+                    </span>
+                  )}
+                  {/* Mostrar icono de hembra solo si existe porcentaje de hembras */}
+                  {femalePercentage > 0 && (
+                    <span>
+                      <FemaleIcon />
+                    </span>
+                  )}
+                </>
+              )}
             </div>
           </li>
         </ul>
