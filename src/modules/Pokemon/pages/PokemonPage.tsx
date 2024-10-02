@@ -7,8 +7,10 @@ import { PokemonType } from '../components/type/type';
 import { PokemonDescription } from '../components/description/description';
 import { PokemonInfo } from '../components/info/info';
 export const PokemonPage = (): JSX.Element => {
-  const { id } = useParams();
-  const { pokemon, error, loading } = usePokemon(Number(id));
+  const { name } = useParams();
+  if (!name) return <NotFound />;
+
+  const { pokemon, error, loading } = usePokemon(name);
 
   if (loading) return <Loader />;
   if (error) return <p>Error: {error}</p>;
@@ -58,7 +60,7 @@ export const PokemonPage = (): JSX.Element => {
 
               <PokemonType pokemon={pokemon} />
 
-              <Weakness id={Number(id)} />
+              <Weakness id={pokemon.id} />
             </div>
           </section>
           <PokemonEvolutions />

@@ -9,7 +9,7 @@ export const PokemonCard = ({ pokemon }: { pokemon: Pokemon }): JSX.Element => {
   return (
     <div className="animation gap-3 bg-white flex flex-wrap flex-col max-w-56">
       <div className="bg-gray-200 rounded flex">
-        <Link to={`/pokemon/${pokemon.id}`}>
+        <Link to={`/pokemon/${pokemon.name}`}>
           <img
             loading="lazy"
             src={officialArtworkUrl}
@@ -23,7 +23,7 @@ export const PokemonCard = ({ pokemon }: { pokemon: Pokemon }): JSX.Element => {
         <h5 className="text-black text-lg pt-1.5 font-bold">{capitalizeFirstLetter(pokemon.name)}</h5>
         <div>
           {Array.isArray(pokemon.types) &&
-            pokemon.types.map((type: { type: { name: string } }) => {
+            pokemon.types.map((type) => {
               const typeName = type.type.name as keyof typeof Color;
               const typeColor = Color[typeName] || {
                 background: 'default-background-color',
