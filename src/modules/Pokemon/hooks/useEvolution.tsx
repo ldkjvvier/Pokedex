@@ -28,8 +28,6 @@ export const useEvolution = (specieName: string) => {
           currentEvolution = currentEvolution.evolves_to[0]; // Avanzar al siguiente en la cadena
         } while (currentEvolution);
 
-        console.log(evolutions);
-
         // 6. Obtener la información de cada evolución
         const pokemonPromises = evolutions.map((evolution) => getPokemon(evolution));
         const pokemon = await Promise.all(pokemonPromises);

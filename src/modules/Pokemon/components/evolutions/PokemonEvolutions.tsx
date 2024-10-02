@@ -6,7 +6,6 @@ interface PokemonEvolutionsProps {
 }
 export const PokemonEvolutions = ({ specieName }: PokemonEvolutionsProps) => {
   const { evolutions, error, loading } = useEvolution(specieName);
-  console.log(evolutions);
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;
   return (

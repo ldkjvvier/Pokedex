@@ -7,22 +7,22 @@ interface PokemonInfoProps {
 
 export const PokemonInfo = ({ pokemon }: PokemonInfoProps) => {
   return (
-    <div className="bg-[#30A7D7] text-center grid grid-cols-1 md:grid-cols-2 rounded p-3 mb-6 text-lg">
+    <div className="bg-[#30A7D7] text-start grid grid-cols-1 md:grid-cols-2 rounded p-3 mb-6 text-lg">
       <div className="w-full md:w-2/4">
-        <ul className="">
+        <ul>
           <li>
-            <span className="text-white ">Altura</span>
+            <span className="text-white">Altura</span>
             <br />
-            <span className="">{pokemon.height}</span>
+            <span>{(pokemon.height / 10).toFixed(1).replace('.', ',')} m</span>
           </li>
           <li>
             <span className="text-white">Peso</span>
             <br />
-            <span>{pokemon.weight}</span>
+            <span>{(pokemon.weight / 10).toFixed(1).replace('.', ',')} kg</span>
           </li>
           <li>
             <span className="text-white">Sexo</span>
-            <div className="flex gap-2 justify-center">
+            <div className="flex gap-2">
               <span>
                 <MaleIcon />
               </span>
