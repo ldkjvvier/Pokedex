@@ -4,8 +4,7 @@ import { Color } from '@/modules/Home/interfaces/Color';
 export const Weakness = ({ id }: { id: number }): JSX.Element => {
   const { type, loading, error } = useType(id);
   if (loading) return <p>Cargando...</p>;
-  if (error) return <p>Error: {error}</p>;
-  if (!type) return <span>Error al cargar debilidades</span>;
+  if (!type || error) return <span>Error al cargar debilidades</span>;
   return (
     <div className="text-lg pb-6">
       <span className="font-medium">Debilidad</span>

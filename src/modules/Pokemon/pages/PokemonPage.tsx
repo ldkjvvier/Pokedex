@@ -11,11 +11,11 @@ export const PokemonPage = (): JSX.Element => {
   name = name?.toLocaleLowerCase();
   if (!name) return <NotFound />;
 
-  const { pokemon, error, loading } = usePokemon(name);
+  const { pokemon, species, error, loading } = usePokemon(name);
 
   if (loading) return <Loader />;
   if (error) return <p>Error: {error}</p>;
-  if (!pokemon) return <NotFound />;
+  if (!pokemon || !species) return <NotFound />;
 
   return (
     <main>
@@ -57,7 +57,7 @@ export const PokemonPage = (): JSX.Element => {
             <div className="text-start">
               <PokemonDescription pokemon={pokemon} />
 
-              <PokemonInfo pokemon={pokemon} />
+              <PokemonInfo pokemon={pokemon} specie={species} />
 
               <PokemonType pokemon={pokemon} />
 

@@ -1,11 +1,19 @@
-import { Pokemon } from 'pokeapi-js-wrapper';
+import { Pokemon, PokemonSpecies } from 'pokeapi-js-wrapper';
 import { capitalizeFirstLetter } from '@/utils/capitalizeFirstLetter';
 import { MaleIcon, FemaleIcon } from '@/components';
 interface PokemonInfoProps {
   pokemon: Pokemon;
+  specie: PokemonSpecies;
 }
 
-export const PokemonInfo = ({ pokemon }: PokemonInfoProps) => {
+export const PokemonInfo = ({ pokemon, specie }: PokemonInfoProps) => {
+  // Encuentra la categoría en inglés
+  const category =
+    specie.genera
+      .find((genus) => genus.language.name === 'en')
+      ?.genus.split('Pokémon')[0]
+      .trim() ?? 'Unknown';
+
   return (
     <div className="bg-[#30A7D7] text-start grid grid-cols-1 md:grid-cols-2 rounded p-3 mb-6 text-lg">
       <div className="w-full md:w-2/4">
@@ -38,7 +46,7 @@ export const PokemonInfo = ({ pokemon }: PokemonInfoProps) => {
           <li>
             <span className="text-white">Categoría</span>
             <br />
-            <span>{capitalizeFirstLetter(pokemon.species.name)}</span>
+            <span>{capitalizeFirstLetter(category)}</span>
           </li>
           <li>
             <span className="text-white">Habilidad</span>
