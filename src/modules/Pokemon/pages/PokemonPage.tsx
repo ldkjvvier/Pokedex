@@ -55,7 +55,7 @@ export const PokemonPage = (): JSX.Element => {
             </div>
 
             <div className="text-start">
-              <PokemonDescription pokemon={pokemon} />
+              <PokemonDescription specie={species} />
 
               <PokemonInfo pokemon={pokemon} specie={species} />
 

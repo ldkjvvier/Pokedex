@@ -1,44 +1,17 @@
-import { Pokemon } from 'pokeapi-js-wrapper';
-import { capitalizeFirstLetter } from '@/utils/capitalizeFirstLetter';
+import { PokemonSpecies } from 'pokeapi-js-wrapper';
 import { PokeBallIcon } from '@/components';
 interface PokemonDescriptionProps {
-  pokemon: Pokemon;
+  specie: PokemonSpecies;
 }
-export const PokemonDescription = ({ pokemon }: PokemonDescriptionProps) => {
+export const PokemonDescription = ({ specie }: PokemonDescriptionProps) => {
+  const description =
+    specie.flavor_text_entries.find((entry) => entry.language.name === 'en')?.flavor_text ??
+    'Descripción no disponible';
+
   return (
     <>
       <div>
-        <p className="text-lg pb-3">
-          {capitalizeFirstLetter(pokemon.name)} es un Pokémon de tipo{' '}
-          {pokemon.types.map((type: { type: { name: string } }, index) => (
-            <span key={index}>{capitalizeFirstLetter(type.type.name)}</span>
-          ))}
-          . {pokemon.species.name} es un Pokémon de la{' '}
-          {pokemon.id <= 151
-            ? 'Primera'
-            : pokemon.id <= 251
-            ? 'Segunda'
-            : pokemon.id <= 386
-            ? 'Tercera'
-            : pokemon.id <= 493
-            ? 'Cuarta'
-            : pokemon.id <= 649
-            ? 'Quinta'
-            : pokemon.id <= 721
-            ? 'Sexta'
-            : pokemon.id <= 809
-            ? 'Séptima'
-            : pokemon.id <= 898
-            ? 'Octava'
-            : 'Desconocida'}{' '}
-          generación . Su número de Pokédex es{' '}
-          {pokemon.id.toString().length === 1
-            ? '00' + pokemon.id
-            : pokemon.id.toString().length === 2
-            ? '0' + pokemon.id
-            : pokemon.id}
-          .
-        </p>
+        <p className="text-lg pb-3">{description}</p>
       </div>
       <div className="pb-6 flex gap-3">
         <span className="font-medium text-lg">Versiones:</span>
