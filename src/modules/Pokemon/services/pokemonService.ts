@@ -15,3 +15,8 @@ export const getChain = async (id: number) => {
   const Pokemon = await P.getEvolutionChainById(id);
   return Pokemon;
 };
+
+export const getSpecies = async (name: string) => {
+  const Pokemon = await P.getPokemonSpeciesByName(name);
+  return Pokemon;
+};

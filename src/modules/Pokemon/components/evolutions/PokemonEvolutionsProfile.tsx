@@ -1,6 +1,12 @@
+import { Pokemon } from 'pokeapi-js-wrapper';
 import { Color } from '../../../Home/interfaces/Color';
 import { capitalizeFirstLetter } from '@/utils/capitalizeFirstLetter';
-export const PokemonEvolutionProfile = (): JSX.Element => {
+
+interface PokemonEvolutionProfileProps {
+  pokemon: Pokemon;
+}
+
+export const PokemonEvolutionProfile = ({ pokemon }: PokemonEvolutionProfileProps) => {
   return (
     <>
       <div className="text-white flex flex-col items-center">
@@ -12,25 +18,33 @@ export const PokemonEvolutionProfile = (): JSX.Element => {
           }}
         >
           <img
-            src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/060.png"
-            alt=""
+            src={pokemon.sprites.other['official-artwork'].front_default ?? ''}
+            alt={pokemon.name + ' avatar image'}
             className="bg-transparent object-cover"
           />
         </div>
         <div className="flex flex-col">
           <p>
-            <span className="font-bold">Pikachu</span> N.° 0001
+            <span className="font-bold">{pokemon.name}</span> N.°{' '}
+            {pokemon.id.toString().length === 1
+              ? '00' + pokemon.id
+              : pokemon.id.toString().length === 2
+              ? '0' + pokemon.id
+              : pokemon.id}
           </p>
           <ul className="flex flex-wrap justify-center">
-            <li
-              className={`text-gray-500 rounded px-5 py-0 text-[12px] mr-2 mt-2`}
-              style={{
-                background: Color.grass.background,
-                color: Color.grass.text
-              }}
-            >
-              <span>{capitalizeFirstLetter('Psíquico')}</span>
-            </li>
+            {pokemon.types.map((type: { type: { name: string } }, index) => (
+              <li
+                className={`text-gray-500 rounded px-5 py-0 text-[12px] mr-2 mt-2`}
+                key={index}
+                style={{
+                  background: Color[type.type.name as keyof typeof Color].background,
+                  color: Color[type.type.name as keyof typeof Color].text
+                }}
+              >
+                <span>{capitalizeFirstLetter(type.type.name)}</span>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
