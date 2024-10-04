@@ -61,7 +61,7 @@ export const PokemonPage = (): JSX.Element => {
 
               <PokemonType pokemon={pokemon} />
 
-              <Weakness id={pokemon.id} />
+              <Weakness pokemon={pokemon} />
             </div>
           </section>
           <PokemonEvolutions specieName={pokemon.species.name} />

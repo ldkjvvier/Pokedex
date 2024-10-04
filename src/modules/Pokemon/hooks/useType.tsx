@@ -1,25 +1,27 @@
 import { getType } from '../services/pokemonService';
 import { useEffect, useState } from 'react';
 import { Type } from 'pokeapi-js-wrapper';
-export const useType = (id: number) => {
-  const [type, setType] = useState<Type>();
+
+export const useType = (names: string[]) => {
+  const [types, setTypes] = useState<Type[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
   useEffect(() => {
-    const fetchPokemon = async () => {
+    const fetchTypes = async () => {
       try {
-        const data = await getType(id);
-        if (data) setType(data);
+        const typeDataPromises = names.map((names) => getType(names)); // Obtener todos los tipos en paralelo
+        const data = await Promise.all(typeDataPromises); // Esperar a que todos se resuelvan
+        setTypes(data);
         setLoading(false);
       } catch (error) {
-        setError('Error fetching pokemon');
+        setError('Error fetching types');
         setLoading(false);
       }
     };
 
-    void fetchPokemon();
-  }, [id]);
+    void fetchTypes();
+  }, [names]);
 
-  return { type, error, loading };
+  return { types, error, loading };
 };
