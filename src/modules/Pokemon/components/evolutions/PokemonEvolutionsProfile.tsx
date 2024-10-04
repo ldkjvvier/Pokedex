@@ -1,6 +1,7 @@
 import { Pokemon } from 'pokeapi-js-wrapper';
 import { Color } from '../../../Home/interfaces/Color';
 import { capitalizeFirstLetter } from '@/utils/capitalizeFirstLetter';
+import { formatPokemonId } from '@/utils/formatPokemonId';
 
 interface PokemonEvolutionProfileProps {
   pokemon: Pokemon;
@@ -26,14 +27,7 @@ export const PokemonEvolutionProfile = ({ pokemon }: PokemonEvolutionProfileProp
         <div>
           <div className="inline-flex gap-2">
             <h3 className="font-bold text-[1.1rem]">{capitalizeFirstLetter(pokemon.name)}</h3>
-            <span className="flexo text-[#a4acaf]">
-              N.º{' '}
-              {pokemon.id.toString().length === 1
-                ? '00' + pokemon.id
-                : pokemon.id.toString().length === 2
-                ? '0' + pokemon.id
-                : pokemon.id}
-            </span>
+            <span className="flexo text-[#a4acaf]">N.º {formatPokemonId(pokemon.id)}</span>
           </div>
           <ul className="flex flex-wrap">
             {pokemon.types.map((type, index) => (

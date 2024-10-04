@@ -2,6 +2,7 @@ import { Color } from '../interfaces/Color';
 import { Link } from 'react-router-dom';
 import { Pokemon } from 'pokeapi-js-wrapper';
 import { capitalizeFirstLetter } from '@/utils/capitalizeFirstLetter';
+import { formatPokemonId } from '@/utils/formatPokemonId';
 
 export const PokemonCard = ({ pokemon }: { pokemon: Pokemon }): JSX.Element => {
   const officialArtworkUrl = pokemon.sprites?.other?.['official-artwork']?.front_default ?? '';
@@ -19,7 +20,7 @@ export const PokemonCard = ({ pokemon }: { pokemon: Pokemon }): JSX.Element => {
         </Link>
       </div>
       <section className="p-3 text-start">
-        <p className="flexoBold text-gray-500 text-xs font-bold">N.° {pokemon.id}</p>
+        <p className="flexoBold text-gray-500 text-xs font-bold">N.° {formatPokemonId(pokemon.id)}</p>
         <h5 className="text-black text-lg pt-1.5 font-bold">{capitalizeFirstLetter(pokemon.name)}</h5>
         <div>
           {Array.isArray(pokemon.types) &&
