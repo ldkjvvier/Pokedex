@@ -6,8 +6,8 @@ export const getPokemon = async (name: string) => {
   return Pokemon;
 };
 
-export const getType = async (id: number) => {
-  const Pokemon = await P.getTypeByName(id);
+export const getType = async (name: string) => {
+  const Pokemon = await P.getTypeByName(name);
   return Pokemon;
 };
 

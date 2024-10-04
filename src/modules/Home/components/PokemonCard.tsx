@@ -9,7 +9,7 @@ export const PokemonCard = ({ pokemon }: { pokemon: Pokemon }): JSX.Element => {
   return (
     <div className="animation gap-3 bg-white flex flex-wrap flex-col max-w-56">
       <div className="bg-gray-200 rounded flex">
-        <Link to={`/pokemon/${pokemon.name}`}>
+        <Link to={`${pokemon.name}`}>
           <img
             loading="lazy"
             src={officialArtworkUrl}
