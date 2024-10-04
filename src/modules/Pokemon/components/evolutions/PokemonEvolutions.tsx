@@ -13,7 +13,7 @@ export const PokemonEvolutions = ({ specieName }: PokemonEvolutionsProps) => {
       {' '}
       {/* Añadido position relative al contenedor principal */}
       <div className=" relative bg-background-image z-0 bg-[#424242] opacity-90 text-white text-start p-6 rounded-[5px]">
-        <h4 className="font-bold text-2xl mb-6">Evoluciones</h4>
+        <h4 className="font-bold text-2xl mb-6">Evolutions</h4>
         <div className="grid md:grid-cols-3 gap-12">
           {evolutions.map((evolution, index) => (
             <PokemonEvolutionProfile key={index} pokemon={evolution} />

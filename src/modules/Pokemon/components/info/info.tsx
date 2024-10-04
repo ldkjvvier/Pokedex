@@ -30,17 +30,17 @@ export const PokemonInfo = ({ pokemon, specie }: PokemonInfoProps) => {
       <div className="w-full md:w-2/4">
         <ul>
           <li>
-            <span className="text-white">Altura</span>
+            <span className="text-white">Height</span>
             <br />
             <span>{(pokemon.height / 10).toFixed(1).replace('.', ',')} m</span>
           </li>
           <li>
-            <span className="text-white">Peso</span>
+            <span className="text-white">Weight</span>
             <br />
             <span>{(pokemon.weight / 10).toFixed(1).replace('.', ',')} kg</span>
           </li>
           <li>
-            <span className="text-white">Sexo</span>
+            <span className="text-white">Sex</span>
             <div className="flex gap-2">
               {genderRate === -1 ? (
                 <span>DESCONOCIDO</span>
@@ -67,12 +67,12 @@ export const PokemonInfo = ({ pokemon, specie }: PokemonInfoProps) => {
       <div className="w-full md:w-2/4">
         <ul>
           <li>
-            <span className="text-white">Categoría</span>
+            <span className="text-white">Category</span>
             <br />
             <span>{capitalizeFirstLetter(category)}</span>
           </li>
           <li>
-            <span className="text-white">Habilidad</span>
+            <span className="text-white">Ability</span>
             <br />
             {pokemon.abilities.map((ability) => {
               return (

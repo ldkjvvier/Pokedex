@@ -14,7 +14,7 @@ export const PokemonDescription = ({ specie }: PokemonDescriptionProps) => {
         <p className="text-lg pb-3">{description}</p>
       </div>
       <div className="pb-6 flex gap-3">
-        <span className="font-medium text-lg">Versiones:</span>
+        <span className="font-medium text-lg">Versions:</span>
         <span className=" border-4 rounded-full border-transparent hover:border-[#17ADFF] transition">
           <PokeBallIcon color={'#0072B0'} />
         </span>

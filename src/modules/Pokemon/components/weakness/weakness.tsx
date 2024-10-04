@@ -6,7 +6,7 @@ export const Weakness = ({ pokemon }: { pokemon: Pokemon }): JSX.Element => {
   const typeNames = pokemon.types.map((type) => type.type.name);
 
   const { types, loading, error } = useType(typeNames);
-  if (loading) return <p>Cargando...</p>;
+  if (loading) return <p>...</p>;
   if (!types || error) return <span>Error al cargar debilidades</span>;
 
   // Aplanar todas las debilidades de los tipos y eliminar duplicados
@@ -16,7 +16,7 @@ export const Weakness = ({ pokemon }: { pokemon: Pokemon }): JSX.Element => {
 
   return (
     <div className="text-lg pb-6">
-      <span className="font-medium">Debilidad</span>
+      <span className="font-medium">Weakness</span>
 
       <ul className="flex flex-wrap">
         {weaknesses.map((weakness, index) => (

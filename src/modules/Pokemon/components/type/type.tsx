@@ -9,7 +9,7 @@ interface PokemonTypeProps {
 export const PokemonType = ({ pokemon }: PokemonTypeProps) => {
   return (
     <div className="flex flex-col text-lg pb-6">
-      <span className="font-medium">Tipo</span>
+      <span className="font-medium">Type</span>
       <ul className="flex flex-wrap">
         {pokemon.types.map((type: { type: { name: string } }, index) => (
           <li
