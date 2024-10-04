@@ -1,9 +1,9 @@
 {
   "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
+    { "source": "/pokedex/(.*)", "destination": "/$1" }
+  ],
+  "routes": [
+    { "src": "/pokedex/(.*)", "dest": "/pokedex/index.html" }
   ],
   "headers": []
 }
