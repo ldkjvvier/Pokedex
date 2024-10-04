@@ -20,7 +20,7 @@ export const PokemonPage = (): JSX.Element => {
   return (
     <main>
       <div className="flexoMedium font-bold md:px-3 w-full text-black flex flex-col items-center align-middle float-end">
-        <div className="flex flex-col md:w-3/5 px-3  bg-white">
+        <div className="flex flex-col md:w-3/5 px-3 bg-white mb-24">
           <section className="flex justify-center text-xl gap-12 pb-6 font-4xl pt-12 ">
             <h4 className="text-3xl">{capitalizeFirstLetter(pokemon.name)}</h4>
             <span className="text-3xl text-gray-600">
@@ -65,6 +65,14 @@ export const PokemonPage = (): JSX.Element => {
             </div>
           </section>
           <PokemonEvolutions specieName={pokemon.species.name} />
+          <div className="flex w-full justify-end my-6">
+            <a
+              className="bg-[#ee6b2f] hover:bg-[#da471b] text-[1rem] p-[1rem] rounded-md text-white cursor-pointer transition-all"
+              href="/"
+            >
+              Go to the Pokédex
+            </a>
+          </div>
         </div>
       </div>
     </main>
