@@ -3,6 +3,5 @@
   "trailingSlash": false,
   "rewrites": [
     { "source": "/pokedex/(.*)", "destination": "/$1" }
-  ],
-  "headers": []
+  ]
 }
