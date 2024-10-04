@@ -1,8 +1,8 @@
 {
   "rewrites": [
     {
-      "source": "pokedex/(.*)",
-      "destination": "/index.html"
+      "source": "/pokedex/(.*)",
+      "destination": "/pokedex/index.html"
     }
   ],
   "headers": []
