@@ -11,6 +11,13 @@
 }
 
 @font-face {
+  font-family: 'RobotoBold';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/assets/fonts/RobotoBold.ttf') format('truetype');
+}
+
+@font-face {
   font-family: 'Flexo';
   font-style: normal;
   font-weight: 700;
@@ -41,6 +48,10 @@
 
 .roboto {
   font-family: 'Roboto', arial, sans-serif;
+}
+
+.robotoBold {
+  font-family: 'RobotoBold', arial, sans-serif;
 }
 
 .flexo {
