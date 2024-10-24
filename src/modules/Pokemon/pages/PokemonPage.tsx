@@ -32,7 +32,7 @@ export const PokemonPage = (): JSX.Element => {
           <section className="grid grid-cols-1 lg:grid-cols-2 mb-16 flex-wrap gap-3">
             <div className="rounded">
               <Avatar pokemon={pokemon} />
-              <PokemonStats />
+              <PokemonStats pokemon={pokemon} />
             </div>
 
             <div className="text-start">
