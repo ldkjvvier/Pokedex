@@ -12,6 +12,7 @@ export const PokemonPage = (): JSX.Element => {
   let { name } = useParams();
   name = name?.toLocaleLowerCase();
   if (!name) return <NotFound />;
+  document.title = `${capitalizeFirstLetter(name)} | Pokédex`;
 
   const { pokemon, species, error, loading } = usePokemon(name);
 
