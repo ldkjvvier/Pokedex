@@ -23,7 +23,7 @@ export const PokemonPage = (): JSX.Element => {
   return (
     <main>
       <div className="flexoMedium font-bold md:px-3 text-black flex flex-col items-center align-middle float-end">
-        <div className="flex flex-col md:w-[50%] px-3 bg-white mb-24">
+        <div className="flex flex-col md:w-[55%] px-3 bg-white mb-24">
           <section className="flex justify-center text-xl gap-12 pb-6 font-4xl pt-12 ">
             <h4 className="text-3xl">{capitalizeFirstLetter(pokemon.name)}</h4>
             <span className="text-3xl text-gray-600">N.° {formatPokemonId(pokemon.id)}</span>
