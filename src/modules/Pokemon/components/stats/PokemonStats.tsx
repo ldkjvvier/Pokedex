@@ -14,7 +14,6 @@ export const PokemonStats = ({ pokemon }: PokemonStatsProps): JSX.Element => {
   const specialDefense = pokemon.stats.find((stat) => stat.stat.name === 'special-defense')?.base_stat ?? 0;
   const speed = pokemon.stats.find((stat) => stat.stat.name === 'speed')?.base_stat ?? 0;
 
-  console.log(hp);
   return (
     <div className="rounded-lg my-4 w-full text-white p-3 bg-[#A4A4A4] border-0">
       <h3 className="pb-3 font-xl text-[#313131]">Base points</h3>

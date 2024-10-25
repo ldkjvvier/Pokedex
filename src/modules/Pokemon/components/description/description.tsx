@@ -8,7 +8,7 @@ interface PokemonDescriptionProps {
 type Version = 'blue' | 'red';
 
 export const PokemonDescription = ({ specie }: PokemonDescriptionProps) => {
-  const [selectedVersion, setSelectedVersion] = useState<string>('blue');
+  const [selectedVersion, setSelectedVersion] = useState<Version>('blue');
   const description =
     specie.flavor_text_entries.find((entry) => entry.language.name === 'en')?.flavor_text ??
     'Descripción no disponible';

@@ -1,5 +1,5 @@
 import { Pokemon } from 'pokeapi-js-wrapper';
-import { Color } from '../../../Home/interfaces/Color';
+import { Color } from '@/models/Color';
 import { capitalizeFirstLetter } from '@/utils/capitalizeFirstLetter';
 import { formatPokemonId } from '@/utils/formatPokemonId';
 

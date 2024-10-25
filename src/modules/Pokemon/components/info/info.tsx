@@ -74,14 +74,9 @@ export const PokemonInfo = ({ pokemon, specie }: PokemonInfoProps) => {
           <li>
             <span className="text-white">Ability</span>
             <br />
-            {pokemon.abilities.map((ability) => {
-              return (
-                <>
-                  <span key={ability.ability.name}>{capitalizeFirstLetter(ability.ability.name)}</span>
-                  <br />
-                </>
-              );
-            })}
+            {pokemon.abilities.map((ability) => (
+              <span key={ability.ability.name}>{capitalizeFirstLetter(ability.ability.name)}</span>
+            ))}
           </li>
         </ul>
       </div>

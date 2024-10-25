@@ -1,6 +1,6 @@
 import { Pokemon } from 'pokeapi-js-wrapper';
 import { capitalizeFirstLetter } from '@/utils/capitalizeFirstLetter';
-import { Color } from '@/modules/Home/interfaces/Color';
+import { Color } from '@/models/Color';
 
 interface PokemonTypeProps {
   pokemon: Pokemon;

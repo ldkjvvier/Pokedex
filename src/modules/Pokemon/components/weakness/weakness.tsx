@@ -1,6 +1,6 @@
 import { useType } from '../../hooks/useType';
 import { capitalizeFirstLetter } from '@/utils/capitalizeFirstLetter';
-import { Color } from '@/modules/Home/interfaces/Color';
+import { Color } from '@/models/Color';
 import { Pokemon } from 'pokeapi-js-wrapper';
 export const Weakness = ({ pokemon }: { pokemon: Pokemon }): JSX.Element => {
   const typeNames = pokemon.types.map((type) => type.type.name);

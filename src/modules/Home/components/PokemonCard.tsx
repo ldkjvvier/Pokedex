@@ -1,4 +1,4 @@
-import { Color } from '../interfaces/Color';
+import { Color } from '@/models/Color';
 import { Link } from 'react-router-dom';
 import { Pokemon } from 'pokeapi-js-wrapper';
 import { capitalizeFirstLetter } from '@/utils/capitalizeFirstLetter';
